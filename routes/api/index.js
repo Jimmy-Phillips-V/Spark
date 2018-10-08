@@ -6,8 +6,8 @@ const localRoutes = require("./local")
 // routes
 router.use("/global", globalRoutes);
 
-// router.use("/national", natRoutes);
+router.use("/national", natRoutes);
 
-// router.use("/local", localRoutes)
+router.use("/local", localRoutes)
 
 module.exports = router;

@@ -5,7 +5,7 @@ import GlobalDetail from "../../components/GlobalDetail"
 
 class Global extends Component {
     state = {
-      global: null
+      global: []
     };
   
     componentDidMount() {
@@ -15,7 +15,7 @@ class Global extends Component {
     loadGlobal = () => {
       API.getGlobal()
         .then(res =>
-          this.setState({ global: res.data })
+          this.setState({ global: res.data.data })
         )
         .catch(err => console.log(err));
         console.log (this.state.global)
@@ -26,22 +26,14 @@ class Global extends Component {
       return (
         <div>
             <h1>Test</h1> 
-        <GlobalDetail
-            // {this.state.global.map(item, i =>(
-            //    <li>item={i}>
-            //     <span>item: {i}</span>
-            //     </li> 
-            // ))
-
-            // {Object.keys(subjects).map((item, i) => (
-            //     <li className="travelcompany-input" key={i}>
-            //         <span className="input-label">key: {i} Name: {subjects[item]}</span>
-            //     </li>
-            ))}
-        />
-        </div>
-      );
+            {this.state.global.map(item => {
+               return (
+                <p>{item.fields.name}</p>
+               )
+            })}
+            </div>
+      )};
     }
-  }
+
   
   export default Global;

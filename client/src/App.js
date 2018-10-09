@@ -7,8 +7,8 @@ import National from "./pages/National";
 // import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 
-
 const App = () => (
+  
   <Router>
     <div>
       <Switch>

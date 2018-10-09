@@ -7,7 +7,7 @@ const localRoutes = require("./local")
 // routes
 router.use("/global", globalRoutes);
 
-router.use("/login", logRoutes);
+// router.use("/login", logRoutes);
 
 router.use("/national", natRoutes);
 

@@ -29,6 +29,7 @@
     "express": "^4.15.4",
     "firebase": "^5.5.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.0.17"
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.39.0"
   }
 }

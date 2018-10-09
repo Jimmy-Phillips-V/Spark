@@ -1,7 +1,7 @@
 const express = require("express");
 const firebase = require("firebase")
 const functions = require('firebase-functions');
-
+const app = express();
 // The Firebase Admin SDK to access the Firebase Realtime Database. 
 //const admin = require('firebase-admin');
 firebase.initializeApp();
@@ -15,7 +15,7 @@ exports.testData = functions.database.ref('/data/{pushId}').onWrite(event =>
 
 // const sequelize = require("sequelize");
 const routes = require("./routes");
-const app = express();
+
 const PORT = process.env.PORT || 3001;
 
 var db = require("./models")
@@ -28,12 +28,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-db.sequelize.sync().then(function(){
-  app.listen(port, function(){
-    
-  })
-})
-
 // Add routes, both API and view
 app.use(routes);
 
@@ -43,10 +37,17 @@ app.use(routes);
 //   "mongodb://localhost/nytarticles"
 // );
 
+db.sequelize.sync().then(function(){
+  app.listen(PORT, function(){
+    
+  })
+})
+
+
 // Start the API server
-app.listen(PORT, () =>
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
-);
+// app.listen(PORT, () =>
+//   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
+// );
 
 
 

@@ -1,111 +1,163 @@
-//script inclusions required for each login HTML page
-  //insert bootstrap links here
-// <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-// <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-// <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+//Jimmy's Code
+import React, { Component } from 'react';
+import logo from '../../logo.svg';
+import firebaseLogo from '../../firebase-logo.png';
+import '../../App.css';
+import Dashboard from '../../components/Dashboard';
+import firebase from '../../base'
 
+//Jimmy's Code
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      authenticated: false,
+      items: []
+    }
+  }
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB8nJB4M4D0GTwOUBQlHen0tYSGfINrASA",
-    authDomain: "spark-aec8c.firebaseapp.com",
-    databaseURL: "https://spark-aec8c.firebaseio.com",
-    projectId: "spark-aec8c",
-    storageBucket: "spark-aec8c.appspot.com",
-    messagingSenderId: "263817810568"
-  };
-  firebase.initializeApp(config);
-  
-  
-  // //CREATE VARs for username and password capture from form:
-  
-  
-  
-  // // sign up new users
-  // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  //   // Handle Errors here.
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  //   // ...
-  // });
-  
-  
-  // // sign-in existing users
-  // firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  //   // Handle Errors here.
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  //   // ...
-  // });
-  
-  // // global listener for each page that requires login
-  // firebase.auth().onAuthStateChanged(function(user) {
-  //   if (user) {
-  //     // User is signed in.
-  //     var displayName = user.displayName;
-  //     var email = user.email;
-  //     var emailVerified = user.emailVerified;
-  //     var photoURL = user.photoURL;
-  //     var isAnonymous = user.isAnonymous;
-  //     var uid = user.uid;
-  //     var providerData = user.providerData;
-  //     // ...
-  //   } else {
-  //     // User is signed out.
-  //     // ...
-  //   }
-  // });
-  
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-  var uiConfig = {
-      callbacks: {
-        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-          // User successfully signed in.
-          // Return type determines whether we continue the redirect automatically
-          // or whether we leave that to developer to handle.
-          return true;
-        },
-        uiShown: function() {
-          // The widget is rendered.
-          // Hide the loader.
-          document.getElementById('loader').style.display = 'none';
-        }
-      },
-      // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-      signInFlow: 'popup',
-      signInSuccessUrl: 'index.html',
-      signInOptions: [
-        // Leave the lines as is for the providers you want to offer your users.
-      //   firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      //   firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      //   firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      //   firebase.auth.GithubAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      //   firebase.auth.PhoneAuthProvider.PROVIDER_ID
-      ],
-      // Terms of service url.
-      tosUrl: '#',
-      // Privacy policy url.
-      privacyPolicyUrl: '#'
-    };
-    ui.start('#firebaseui-auth-container', uiConfig);
-  
-  var mainApp = {};
-  var uid = null;
-  // var firebase = app_fireBase;
-  firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        uid = user.uid;
+  handleCreateUserEmailChange = (event) => {
+    this.setState({createUserEmail: event.target.value});
+  }
+
+  handleCreateUserPasswordChange = (event) => {
+    this.setState({createUserPassword: event.target.value});
+  }
+
+  handleLoginEmailChange = (event) => {
+    this.setState({signInEmail: event.target.value});
+  }
+
+  handleLoginPasswordChange = (event) => {
+    this.setState({signInPassword: event.target.value});
+  }
+
+  createUser = (event) => {
+    event.preventDefault()
+    const promise = firebase.auth().createUserWithEmailAndPassword(this.state.createUserEmail, this.state.createUserPassword)
+    // promise.catch(e => console.log(e.message))
+    promise.then(() => {
+      firebase.auth().currentUser.updateProfile({
+        displayName: this.state.displayName
+      })
+    })
+
+    promise.catch(e => {
+      console.log(e.message)
+      this.setState({
+        error: e.message
+      })
+      setTimeout(()=>{
+        this.setState({
+          error: ""
+        })
+      }, 3000)
+    })
+  }
+
+  signIn = (event) => {
+    event.preventDefault()
+    const promise = firebase.auth().signInWithEmailAndPassword(this.state.signInEmail, this.state.signInPassword)
+    // promise.catch(e => console.log(e.message))
+    promise.catch(e => {
+      console.log(e.message)
+      this.setState({
+        error: e.message
+      })
+      setTimeout(()=>{
+        this.setState({
+          error: ""
+        })
+      }, 3000)
+    })
+  }
+
+  signOut = () => {
+    firebase.auth().signOut()
+  }
+
+  componentDidMount(){
+    console.log('hello');
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      if (firebaseUser){
+        console.log(firebaseUser);
+        this.setState({
+          authenticated: true,
+          uid: firebaseUser.uid
+        })
+        // query to mySQL based on my specifi UID
+
+      } else {
+        console.log('not logged in');
+        this.setState({authenticated: false})
       }
-      else {
-          uid - null;
-        // redirect to login page
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {/* Header   */}
+    <div className="header">
+      <div>
+        <img src={firebaseLogo} alt="logo"></img>
+      </div>
+      <div>
+        <img src={logo} alt="logo" className="App-logo"></img>
+      </div>
+    </div>
+
+     {/* Authentication  */}
+    <div className="dashed-container">
+
+      <div className="cut-sentence">
+        <i className="fa fa-scissors"></i> cut and use in your program
+        <span className="orange-words">Authentication</span>
+      </div>
+
+      {this.state.authenticated === false &&
+        <div>
+          <form id="create-user-form" onSubmit={this.createUser}>
+            <h2>Create user</h2>
+            <input value={this.state.value} onChange={this.handleCreateUserEmailChange} type="email" placeholder="Email" required></input>
+            <input value={this.state.value} onChange={this.handleCreateUserPasswordChange} type="password" placeholder="Password" required></input>
+            <button id="sign-up-button" type="submit">Sign Up</button>
+          </form>
+
+          <form id="sign-in-form" onSubmit={this.signIn}>
+            <h2>Sign in</h2>
+            <input value={this.state.value} onChange={this.handleLoginEmailChange} type="email" placeholder="Email" required></input>
+            <input value={this.state.value} onChange={this.handleLoginPasswordChange} type="password" placeholder="Password" required></input>
+            <button id="signIn-button" type="submit">Log In</button>
+          </form>
+
+          <p id="errors">{this.state.error}</p>
+
+        </div>
       }
-  
-      function logOut() {
-          firebase.auth().signOut();
+      {this.state.authenticated === true &&
+        <button id="sig-out-button" onClick={this.signOut}>Log Out</button>
       }
-  
-      mainApp.logOut = logOut;
-    });
+    </div>
+
+     {/* Errors  */}
+     {
+       (this.state.authenticated === false)
+       ? <div>status <span className="status-red">not authenticated</span></div>
+       : <div>status <span className="status-green">authenticated</span></div>
+     }
+
+      {this.state.authenticated === true &&
+        <Dashboard
+          uid={this.state.uid}
+          items={this.state.items}
+        />
+      }
+
+      </div>
+    );
+  }
+}
+
+export default App;
+

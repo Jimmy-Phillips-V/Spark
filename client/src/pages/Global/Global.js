@@ -4,8 +4,6 @@ import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
 import { List, ListItem } from "../../components/List";
-
-
 class Global extends Component {
     state = {
       global: []
@@ -40,9 +38,7 @@ class Global extends Component {
                 title={item.fields.name}
                 href={item.href}
                 url={item.fields.url}
-                />
-              
-                
+                />   
                )
             })}
             </List>

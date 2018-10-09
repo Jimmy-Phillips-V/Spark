@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import Nav from "../../components/Nav";
+import Jumbotron from "../../components/Jumbotron";
+import {Container, Row, Col} from "../../components/Grid"
+import { List, ListItem } from "../../components/List";
 
 class Local extends Component {
     state = {
@@ -24,15 +27,24 @@ class Local extends Component {
     render() {
         return (
               <div>
-              <h1>Test</h1> 
+           <Nav />
+           <Jumbotron />
+          <Container>
+            <Row>
+              <Col size="md-12">
+              <List>
               {this.state.local.map(item => {
                  return (
-                   <div>
-                      <p>Incident: {item.incidentType}</p>
-                      <p>County: {item.declaredCountyArea}</p>
-                   </div>
+                  <ListItem
+                  Incident={item.incidentType}
+                  County={item.declaredCountyArea}
+                  />  
                  )
               })}
+              </List>
+              </Col>
+              </Row>
+              </Container>
               </div>
         )}
           

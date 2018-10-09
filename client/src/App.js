@@ -17,7 +17,6 @@ const App = () => (
         <Route exact path="/local" component={Local} />
         {/* <Route component={NoMatch} /> */}
       </Switch>
-    <Nav />
     </div>
   </Router>
 );

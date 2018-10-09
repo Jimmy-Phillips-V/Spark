@@ -11,7 +11,10 @@ export const ListItem = props => (
           <Thumbnail src="https://placehold.it/300x300" />
         </Col>
         <Col size="xs-8 sm-9">
-          <h3>{props.title}</h3>
+        <h3>{props.title}</h3>
+        <h3>{props.Incident}</h3>
+        <h3>{props.County}</h3>
+        <h3>{props.State}</h3>
           <p>
           <a rel="noferrer noopener" target="_blank" href={props.url}>
           Get Details

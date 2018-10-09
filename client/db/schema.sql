@@ -1,0 +1,2 @@
+-- DROP DATABASE IF EXISTS spark_db;
+CREATE DATABASE spark_db;

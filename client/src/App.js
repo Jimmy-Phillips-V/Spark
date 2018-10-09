@@ -11,7 +11,7 @@ const App = () => (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Global} />
+        <Route exact path="/" component={login} />
         <Route exact path="/global" component={Global} />
         <Route exact path="/national" component={National} />
         <Route exact path="/local" component={Local} />

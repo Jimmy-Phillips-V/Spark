@@ -4,7 +4,7 @@ import Local from "./pages/Local";
 import Global from "./pages/Global";
 import National from "./pages/National";
 // import NoMatch from "./pages/NoMatch";
-// import Nav from "./components/Nav";
+import Nav from "./components/Nav";
 
 
 const App = () => (
@@ -17,6 +17,7 @@ const App = () => (
         <Route exact path="/local" component={Local} />
         {/* <Route component={NoMatch} /> */}
       </Switch>
+    <Nav />
     </div>
   </Router>
 );

@@ -17,6 +17,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
+    "firebase": "*",
+    "firebase-admin": "*",
+    "firebase-functions": "*",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
@@ -24,7 +27,7 @@
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "firebase": "^5.5.2",
+    "firebase": "^5.5.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.0.17"
   }

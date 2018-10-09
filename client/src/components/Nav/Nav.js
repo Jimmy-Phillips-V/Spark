@@ -21,6 +21,9 @@ function Nav(props) {
       <Button component={Link} to="/" variant="contained" color="default" className={classes.button}>
        Home
       </Button>
+      <Button component={Link} to="/local" variant="contained" color="secondary" className={classes.button}>
+       Local
+      </Button>
       <Button component={Link} to="/national" variant="contained" color="primary" className={classes.button}>
      National
       </Button>
@@ -36,5 +39,7 @@ Nav.propTypes = {
 };
 
 export default withStyles(styles)(Nav);
+
+
 
 

@@ -8,7 +8,7 @@ export const ListItem = props => (
     <Container>
       <Row>
         <Col size="xs-4 sm-2">
-          <Thumbnail src="https://placehold.it/300x300" />
+          <Thumbnail src= {props.image} />
         </Col>
         <Col size="xs-8 sm-9">
         <h3>{props.title}</h3>

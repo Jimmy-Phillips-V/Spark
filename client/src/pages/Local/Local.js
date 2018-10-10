@@ -6,6 +6,10 @@ import {Container, Row, Col} from "../../components/Grid"
 import { List, ListItem } from "../../components/List";
 import firebase from '../../base'
 
+
+const disasterImages = {
+  Fire : "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$"
+}
 class Local extends Component {
     state = {
       local: [],
@@ -44,12 +48,13 @@ class Local extends Component {
             <Row>
               <Col size="md-12">
               <List>
-              {this.state.local.map(item => {
+              {this.state.local.map((item, index ) => {
                  return (
                   <ListItem
+                  key = {index}
+                  image={disasterImages[item.incidentType]}
                   text={"Incident: "}
                   Incident={item.incidentType}
-                  
                   County={item.declaredCountyArea}
                   />  
                  )

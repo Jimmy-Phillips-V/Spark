@@ -7,8 +7,13 @@ import { List, ListItem } from "../../components/List";
 import firebase from '../../base'
 
 
-const disasterImages = {
-  Fire : "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$"
+
+
+  const disasterImages = {
+    Fire : {
+      img : "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$",
+      charity : "Red Cross"
+  }
 }
 class Local extends Component {
     state = {
@@ -20,15 +25,7 @@ class Local extends Component {
       this.loadLocal();
     }
 
-    // constructor(props) {
-    //   super(props)
-    //   this.signOut = this.signOut.bind(this)
-    // }
-
-    // signOut = () => {
-    //   firebase.auth().signOut()
-    // }
-  
+   
     loadLocal = () => {
       API.getLocal()
         .then(res =>
@@ -52,7 +49,8 @@ class Local extends Component {
                  return (
                   <ListItem
                   key = {index}
-                  image={disasterImages[item.incidentType]}
+                  image={disasterImages[item.incidentType].img}
+                  charity={disasterImages[item.incidentType].charity}
                   text={"Incident: "}
                   Incident={item.incidentType}
                   County={item.declaredCountyArea}

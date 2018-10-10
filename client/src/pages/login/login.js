@@ -1,7 +1,7 @@
 //Jimmy's Code
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
-import firebaseLogo from '../../firebase-logo.png';
+// import logo from '../../logo.svg';
+// import firebaseLogo from '../../firebase-logo.png';
 import '../../App.css';
 import Dashboard from '../../components/Dashboard';
 import firebase from '../../base'
@@ -136,7 +136,7 @@ class App extends Component {
         </div>
       }
       {this.state.authenticated === true &&
-        <button id="sig-out-button" onClick={this.signOut}>Log Out</button>
+        <button id="sign-out-button" onClick={this.signOut}>Log Out</button>
       }
     </div>
 

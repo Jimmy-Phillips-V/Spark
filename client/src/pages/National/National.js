@@ -36,7 +36,9 @@ class National extends Component {
             {this.state.national.map(item => {
                return (
                 <ListItem
+                text={"Incident: "}
                 Incident={item.incidentType}
+                statename={"State: "}
                 State={item.state}
                 County={item.declaredCountyArea}
                 />  

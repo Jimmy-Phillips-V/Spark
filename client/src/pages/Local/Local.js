@@ -36,7 +36,9 @@ class Local extends Component {
               {this.state.local.map(item => {
                  return (
                   <ListItem
+                  text={"Incident: "}
                   Incident={item.incidentType}
+                  
                   County={item.declaredCountyArea}
                   />  
                  )

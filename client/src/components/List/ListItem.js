@@ -24,7 +24,13 @@ export const ListItem = props => (
         :
           <h4>{props.State}</h4>
         }
-       <h4>{props.charity}</h4>
+
+          {(props.charityname != undefined) ?
+            <h4>{props.charityname+props.charity}</h4>
+          :
+            <h4>{props.charity}</h4>
+          }
+
           {/* <p> */}
           {/* <a rel="noferrer noopener" target="_blank" href={props.url}> */}
           {/* Get Details */}

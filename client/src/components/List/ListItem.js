@@ -35,7 +35,7 @@ export const ListItem = props => (
           Charity: UNICEF 3 out of 4 stars
           </a>  
           </p>
-          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://donate.unicefusa.org/page/contribute/indonesia-earthquake?utm_campaign=20181010_Emergencies&utm_medium=cpc&utm_source=google&utm_content=tsrelief11&ms=cpc_dig_2018_Emergencies_20181010_google_tsrelief11_delve_E1901&initialms=cpc_dig_2018_Emergencies_20181010_google_tsrelief11_delve_E1901&gclid=EAIaIQobChMItveFwsf43QIVCMZkCh3H4QliEAAYASAAEgKtb_D_BwE" role="button">
+          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
             Donate!
           </a>
           

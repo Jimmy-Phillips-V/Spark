@@ -8,8 +8,10 @@ import { List, ListItem } from "../../components/List";
 
 const disasterImages = {
   'Haiti: Earthquake - Oct 2018' : "https://i.ytimg.com/vi/c3AoWxdWvHY/maxresdefault.jpg"
-}
+ }
 
+
+ 
 // const disasterImages = {
 //   Fire : {
 //         image: "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$",

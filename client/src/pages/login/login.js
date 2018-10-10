@@ -1,12 +1,13 @@
 //Jimmy's Code
 import React, { Component } from 'react';
-import '../../App.css';
-import Dashboard from '../../components/Dashboard';
+import './login.css';
 import firebase from '../../base'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Local from "../Local";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
+import Jumbotron from "../../components/Jumbotron";
+import {Container, Row, Col} from "../../components/Grid"
 
 
 //Jimmy's Code
@@ -99,8 +100,9 @@ class login extends Component {
 
   render() {
     return (
-      <div className="App">
-       
+      <div>
+       <Container>
+         <Jumbotron />
 
      {/* Authentication  */}
     <div className="dashed-container">
@@ -110,8 +112,20 @@ class login extends Component {
         <div>
           <form id="create-user-form" onSubmit={this.createUser}>
             <h2>Create user</h2>
-            <input value={this.state.value} onChange={this.handleCreateUserEmailChange} type="email" placeholder="Email" required></input>
-            <input value={this.state.value} onChange={this.handleCreateUserPasswordChange} type="password" placeholder="Password" required></input>
+            <input 
+            value={this.state.value} 
+            onChange={this.handleCreateUserEmailChange} 
+            type="email" 
+            placeholder="Email" 
+            required
+            />
+            <input 
+            value={this.state.value} 
+            onChange={this.handleCreateUserPasswordChange} 
+            type="password" 
+            placeholder="Password" 
+            required
+            />
             <button id="sign-up-button" type="submit">Sign Up</button>
           </form>
 
@@ -123,7 +137,7 @@ class login extends Component {
           </form>
 
           <p id="errors">{this.state.error}</p>
-
+        
         </div>
       }
       {this.state.authenticated === true &&
@@ -144,7 +158,7 @@ class login extends Component {
         <Redirect to="/local"/>
           
       }
-
+      </Container>
       </div>
     );
   }

@@ -4,6 +4,20 @@ import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
 import { List, ListItem } from "../../components/List";
+
+
+const disasterImages = {
+  'Haiti: Earthquake - Oct 2018' : "https://i.ytimg.com/vi/c3AoWxdWvHY/maxresdefault.jpg"
+}
+
+// const disasterImages = {
+//   Fire : {
+//         image: "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$",
+//         charities: 'Red Cross' 
+//   }
+//   hurricane: 'someimage'
+// }
+
 class Global extends Component {
     state = {
       global: []
@@ -32,9 +46,11 @@ class Global extends Component {
             <Row>
               <Col size="md-12">
               <List>
-            {this.state.global.map(item => {
+            {this.state.global.map((item, index )=> {
                return (
                 <ListItem
+                key = {index}
+                image={disasterImages[item.fields.name]}
                 title={item.fields.name}
                 href={item.href}
                 url={item.fields.url}

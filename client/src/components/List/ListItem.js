@@ -8,7 +8,7 @@ export const ListItem = props => (
     <Container>
       <Row>
         <Col size="xs-4 sm-2">
-          <Thumbnail src="https://placehold.it/300x300" />
+          <Thumbnail src={props.image} />
         </Col>
         <Col size="xs-8 sm-9">
         <h3>{props.title}</h3>
@@ -25,7 +25,7 @@ export const ListItem = props => (
           Charity: UNICEF 3 out of 4 stars
           </a>  
           </p>
-          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://donate.unicefusa.org/page/contribute/indonesia-earthquake?utm_campaign=20181010_Emergencies&utm_medium=cpc&utm_source=google&utm_content=tsrelief11&ms=cpc_dig_2018_Emergencies_20181010_google_tsrelief11_delve_E1901&initialms=cpc_dig_2018_Emergencies_20181010_google_tsrelief11_delve_E1901&gclid=EAIaIQobChMItveFwsf43QIVCMZkCh3H4QliEAAYASAAEgKtb_D_BwE" role="button">
+          <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://donate.unicefusa.org/page/contribute/indonesia-earthquake?utm_campaign=20181010_Emergencies&utm_medium=cpc&utm_source=google&utm_content=tsrelief11&ms=cpc_dig_2018_Emergencies_20181010_google_tsrelief11_delve_E1901&initialms=cpc_dig_2018_Emergencies_20181010_google_tsrelief11_delve_E1901&gclid=EAIaIQobChMItveFwsf43QIVCMZkCh3H4QliEAAYASAAEgKtb_D_BwE" role="button">
             Donate!
           </a>
           

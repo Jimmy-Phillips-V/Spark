@@ -4,15 +4,26 @@ import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
 import { List, ListItem } from "../../components/List";
+import firebase from '../../base'
 
 class Local extends Component {
     state = {
-      local: []
+      local: [],
+  
     };
   
     componentDidMount() {
       this.loadLocal();
     }
+
+    // constructor(props) {
+    //   super(props)
+    //   this.signOut = this.signOut.bind(this)
+    // }
+
+    // signOut = () => {
+    //   firebase.auth().signOut()
+    // }
   
     loadLocal = () => {
       API.getLocal()
@@ -22,7 +33,7 @@ class Local extends Component {
         .catch(err => console.log(err));
         console.log (this.state.local)
     };
-  
+    
   
     render() {
         return (

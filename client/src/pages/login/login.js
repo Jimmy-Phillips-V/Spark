@@ -1,13 +1,16 @@
 //Jimmy's Code
 import React, { Component } from 'react';
-// import logo from '../../logo.svg';
-// import firebaseLogo from '../../firebase-logo.png';
 import '../../App.css';
 import Dashboard from '../../components/Dashboard';
 import firebase from '../../base'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Local from "../Local";
+import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+
 
 //Jimmy's Code
-class App extends Component {
+class login extends Component {
   constructor(){
     super()
     this.state = {
@@ -97,23 +100,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* Header   */}
-    <div className="header">
-      <div>
-        <img src={firebaseLogo} alt="logo"></img>
-      </div>
-      <div>
-        <img src={logo} alt="logo" className="App-logo"></img>
-      </div>
-    </div>
+       
 
      {/* Authentication  */}
     <div className="dashed-container">
 
-      <div className="cut-sentence">
-        <i className="fa fa-scissors"></i> cut and use in your program
-        <span className="orange-words">Authentication</span>
-      </div>
 
       {this.state.authenticated === false &&
         <div>
@@ -147,11 +138,11 @@ class App extends Component {
        : <div>status <span className="status-green">authenticated</span></div>
      }
 
-      {this.state.authenticated === true &&
-        <Dashboard
-          uid={this.state.uid}
-          items={this.state.items}
-        />
+      {
+        this.state.authenticated === true &&
+        // <Link to="/local">go to page</Link>
+        <Redirect to="/local"/>
+          
       }
 
       </div>
@@ -159,5 +150,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default login;
 

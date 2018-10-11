@@ -3,7 +3,9 @@ import API from "../../utils/API";
 import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
-import { List, ListItem } from "../../components/List";
+import { List } from "../../components/List";
+import ListItem from "../../components/ListItem";
+
 import firebase from '../../base'
 
 
@@ -18,8 +20,7 @@ import firebase from '../../base'
 }
 class Local extends Component {
     state = {
-      local: [],
-  
+      local: []
     };
   
     componentDidMount() {
@@ -29,11 +30,12 @@ class Local extends Component {
    
     loadLocal = () => {
       API.getLocal()
-        .then(res =>
+        .then(res => {
           this.setState({ local: res.data.DisasterDeclarationsSummaries })
-        )
+          console.log(this.state)
+        })
         .catch(err => console.log(err));
-        console.log (this.state.local)
+        // console.log (this.state.local)
     };
     
   
@@ -67,7 +69,7 @@ class Local extends Component {
               </div>
         )}
           
-        }
+      }
 
   
   export default Local;

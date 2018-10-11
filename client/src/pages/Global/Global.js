@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
+import {Container, Row, Col} from "../../components/Grid";
+import { List } from "../../components/List";
+import ListItem from "../../components/ListItem";
 import {Container, Row, Col} from "../../components/Grid"
-import { List, ListItem } from "../../components/List";
+// import { List, ListItem } from "../../components/List";
 
 
 const disasterImages = {

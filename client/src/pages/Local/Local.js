@@ -4,7 +4,7 @@ import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
 import { List, ListItem } from "../../components/List";
-import firebase from '../../base'
+import firebase from '../../firebase/firebase'
 
 
 

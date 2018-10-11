@@ -12,7 +12,8 @@ import firebase from '../../base'
   const disasterImages = {
     Fire : {
       img : "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$",
-      charity : "Red Cross"
+      charity : "ICNA Relief USA",
+      donationUrl : "https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=043810161"
   }
 }
 class Local extends Component {
@@ -55,6 +56,7 @@ class Local extends Component {
                   text={"Incident: "}
                   Incident={item.incidentType}
                   County={item.declaredCountyArea}
+                  url={disasterImages[item.incidentType].donationUrl}
                   />  
                  )
               })}

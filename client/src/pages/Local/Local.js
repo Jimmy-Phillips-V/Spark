@@ -3,6 +3,8 @@ import API from "../../utils/API";
 import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
+import { List, ListItem } from "../../components/List";
+import firebase from '../../firebase/firebase'
 import { List } from "../../components/List";
 import ListItem from "../../components/ListItem";
 

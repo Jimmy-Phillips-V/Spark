@@ -1,5 +1,6 @@
 const firebase = require("firebase")
 //import { FirebaseAuth } from '@firebase/auth-types';
+import 'firebase/auth';
 
 var config = {
   apiKey: "AIzaSyB8nJB4M4D0GTwOUBQlHen0tYSGfINrASA",
@@ -11,4 +12,8 @@ var config = {
   };
 firebase.initializeApp(config)
 
-module.exports = firebase
+const auth = firebase.auth();
+
+export {
+    auth,
+};

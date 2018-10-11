@@ -5,6 +5,10 @@ import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
 import { List, ListItem } from "../../components/List";
 import firebase from '../../firebase/firebase'
+import { List } from "../../components/List";
+import ListItem from "../../components/ListItem";
+
+import firebase from '../../base'
 
 
 
@@ -12,13 +16,13 @@ import firebase from '../../firebase/firebase'
   const disasterImages = {
     Fire : {
       img : "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$",
-      charity : "Red Cross"
+      charity : "ICNA Relief USA",
+      donationUrl : "https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=043810161"
   }
 }
 class Local extends Component {
     state = {
-      local: [],
-  
+      local: []
     };
   
     componentDidMount() {
@@ -28,11 +32,12 @@ class Local extends Component {
    
     loadLocal = () => {
       API.getLocal()
-        .then(res =>
+        .then(res => {
           this.setState({ local: res.data.DisasterDeclarationsSummaries })
-        )
+          console.log(this.state)
+        })
         .catch(err => console.log(err));
-        console.log (this.state.local)
+        // console.log (this.state.local)
     };
     
   
@@ -55,6 +60,7 @@ class Local extends Component {
                   text={"Incident: "}
                   Incident={item.incidentType}
                   County={item.declaredCountyArea}
+                  url={disasterImages[item.incidentType].donationUrl}
                   />  
                  )
               })}
@@ -65,7 +71,7 @@ class Local extends Component {
               </div>
         )}
           
-        }
+      }
 
   
   export default Local;

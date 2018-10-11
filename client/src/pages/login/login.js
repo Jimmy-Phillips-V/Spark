@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './login.css';
 import firebase from '../../base'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Local from "../Local";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";

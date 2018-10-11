@@ -5,15 +5,13 @@ import { FormBtn } from "../InfoBtn";
 import { InfoModal } from "../InfoModal"
 import axios from "axios";
 
-class ListItem extends React.Component {
-
-state = {
+ class ListItem extends React.Component {
+ state = {
   charities: [],
-  searched: false,
-  show: false
+  searched: false
+  // show: false
 }
-
-handleFormSubmit = event => {
+ handleFormSubmit = event => {
   event.preventDefault();
   if (this.FormBtn == true) {
     axios
@@ -27,10 +25,9 @@ handleFormSubmit = event => {
   })
   };
 
-// RecipeListItem renders a bootstrap list item containing data from the recipe api call
+ // RecipeListItem renders a bootstrap list item containing data from the recipe api call
 render(){
-
-  return(
+   return(
   <li className="list-group-item">
     <Container>
       <Row>
@@ -39,14 +36,14 @@ render(){
         </Col>
         <Col size="xs-8 sm-9">
         <h3>{this.props.title}</h3>
-        {(this.props.text != undefined) ?
+        {(this.props.text !== undefined) ?
            <h3>{this.props.text+this.props.Incident}</h3>
         :
           <h3>{this.props.Incident}</h3>
         }
         
         <h4>{this.props.County}</h4>
-        {(this.props.statename != undefined) ?
+        {(this.props.statename !== undefined) ?
         <h4>{this.props.statename+this.props.State}</h4>
         :
           <h4>{this.props.State}</h4>
@@ -55,12 +52,16 @@ render(){
         onClick={this.handleFormSubmit}>
          Get Charity Details
         </FormBtn>
+          {/* <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
+            Get Charity Details!
+          </a>  */}
         <InfoModal charities={this.state.charities} show={this.state.show}></InfoModal>
-          <p>
-        <a rel="noferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=4617">
-          Charity: UNICEF 3 out of 4 stars
-          </a>  
-          </p>
+          {/* <p>
+          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button" onClick={this.handleFormSubmit}
+          charities={this.state.charities} show={this.state.show}>
+            Get Charity Details!
+          </a> 
+          </p> */}
           <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
             Donate!
           </a>
@@ -72,5 +73,4 @@ render(){
  
   )};
 }
-
-export default ListItem;
+ export default ListItem; 

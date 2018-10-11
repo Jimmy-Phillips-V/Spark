@@ -30,6 +30,8 @@ export const ListItem = props => (
           :
             <h4>{props.charity}</h4>
           }
+        
+
 
           {/* <p> */}
           {/* <a rel="noferrer noopener" target="_blank" href={props.url}> */}
@@ -42,7 +44,7 @@ export const ListItem = props => (
           </a>   */}
        
           {/* </p> */}
-          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
+          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href={props.url} role="button">
             Donate!
           </a>
           

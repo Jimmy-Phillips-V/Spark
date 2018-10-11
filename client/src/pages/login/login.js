@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 
 
 //Jimmy's Code
-class login extends Component {
+class Login extends Component {
   constructor(){
     super()
     this.state = {
@@ -150,5 +150,5 @@ class login extends Component {
   }
 }
 
-export default login;
+export default Login;
 

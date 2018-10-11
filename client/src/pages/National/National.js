@@ -3,7 +3,9 @@ import API from "../../utils/API";
 import Nav from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
-import { List, ListItem } from "../../components/List";
+import { List } from "../../components/List";
+import ListItem from "../../components/ListItem";
+
 
 class National extends Component {
     state = {
@@ -41,7 +43,7 @@ class National extends Component {
                 statename={"State: "}
                 State={item.state}
                 County={item.declaredCountyArea}
-                />  
+                />
                )
             })}
             </List>

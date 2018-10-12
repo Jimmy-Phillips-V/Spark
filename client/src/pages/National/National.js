@@ -31,6 +31,7 @@ const disasterImages = {
     donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=530196605"
   } 
 }
+
 class National extends Component {
     state = {
       national: []

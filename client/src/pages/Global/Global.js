@@ -10,12 +10,12 @@ import ListItem from "../../components/ListItem";
 
 const disasterImages = {
   "Tropical Cyclone" :{
-   img : "https://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2015/6/13/c6a965cb6c5b4e409fb80ec87b30e9b9_18.jpg",
+   img : "https://s.newsweek.com/sites/www.newsweek.com/files/styles/full/public/2017/10/28/1028floridacyclone.jpg",
    charity : "American Red Cross",
    donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=530196605"
   } ,
   "Earthquake" : {
-    img : "https://i.ytimg.com/vi/c3AoWxdWvHY/maxresdefault.jpg",
+    img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBCeR80cQN1RFlvJiYVDY7cxcznKfjDdStZCZpn18pEmm5qFWuhw",
     charity : "World Relief",
    donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=236393344"
   },

@@ -33,7 +33,7 @@ render(){
     <Container>
       <Row>
         <Col size="xs-4 sm-2">
-          <Thumbnail src="https://placehold.it/300x300" />
+          <Thumbnail src={this.props.image} />
         </Col>
         <Col size="xs-8 sm-9">
         <h3>{this.props.title}</h3>
@@ -50,13 +50,15 @@ render(){
           <h4>{this.props.State}</h4>
         }
         <SimpleModalWrapped charities={this.state.charities} open={this.state.open} Incident={this.props.Incident}></SimpleModalWrapped>
+
+          <h4>{this.props.charityname+this.props.charity}</h4>
           {/* <p>
           <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button" onClick={this.handleFormSubmit}
           charities={this.state.charities} open="true">
             Get Charity Details!
           </a> 
           </p> */}
-          <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
+          <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href={this.props.url} role="button">
             Donate!
           </a>
           

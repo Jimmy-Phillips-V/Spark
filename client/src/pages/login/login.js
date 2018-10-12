@@ -144,7 +144,6 @@ class login extends Component {
         <Redirect to="/local"/>
           
       }
-
       </div>
     );
   }

@@ -8,10 +8,39 @@ import ListItem from "../../components/ListItem";
 // import {Container, Row, Col} from "../../components/Grid"
 // import { List, ListItem } from "../../components/List";
 
-
 const disasterImages = {
-  'Haiti: Earthquake - Oct 2018' : "https://i.ytimg.com/vi/c3AoWxdWvHY/maxresdefault.jpg"
- }
+  "Tropical Cyclone" :{
+   img : "https://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2015/6/13/c6a965cb6c5b4e409fb80ec87b30e9b9_18.jpg",
+   charity : "American Red Cross",
+   donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=530196605"
+  } ,
+  "Earthquake" : {
+    img : "https://i.ytimg.com/vi/c3AoWxdWvHY/maxresdefault.jpg",
+    charity : "World Relief",
+   donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=236393344"
+  },
+  "Flood": {
+    img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz6KprbXpdXq-hPxCw5KnRHlfTGVPOtuLc2ZBq-EOUDH5Jjht8WA",
+   charity : "American Red Cross",
+   donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=530196605"
+},
+"Flash Flood": {
+  img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz6KprbXpdXq-hPxCw5KnRHlfTGVPOtuLc2ZBq-EOUDH5Jjht8WA",
+ charity : "American Red Cross",
+ donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=530196605"
+},
+  "Epidemic" :{
+    img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVQAZQmk1WbzpX0ibgpBPnL5tQss-pIQBt2hLJPKriXVjZ2tB7Uw",
+    charity : "Doctors without borders",
+    donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=133433452"
+  }, 
+   "Drought" :{
+    img : "https://i.guim.co.uk/img/media/80861474c741844d65e0fd55241c84ea28a5b7b0/207_314_1650_990/master/1650.jpg?width=460&quality=85&auto=format&fit=max&s=d47f5b28e226f2c7d2d5d1a2249b6389",
+    charity : "World Relief",
+     donationUrl :"https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=236393344" 
+    } 
+}
+
 
 class Global extends Component {
     state = {
@@ -45,10 +74,11 @@ class Global extends Component {
                return (
                 <ListItem
                 key = {index}
-                image={disasterImages[item.fields.name]}
                 title={item.fields.country[0].name + ": " + item.fields.type[0].name}
-                href={item.href}
-                url={item.fields.url}
+                image={disasterImages[item.fields.type[0].name].img}
+                charityname={"Charity: "}
+                charity={disasterImages[item.fields.type[0].name].charity}
+                url={disasterImages[item.fields.type[0].name].donationUrl}
                 />
                )
             })}

@@ -37,9 +37,9 @@ function Nav(props) {
       <Button component={Link} to="/global" variant="contained" color="secondary" className={classes.button}>
        Global
       </Button>
-      <Button onClick={()=>{alert("You are logged out");firebase.auth().signOut()}} className={classes.button}>
+      <Link to="/"><Button onClick={()=>{firebase.auth().signOut()}} className={classes.button}>
       Logout
-      </Button>
+      </Button></Link>
     </div>
   );
 }

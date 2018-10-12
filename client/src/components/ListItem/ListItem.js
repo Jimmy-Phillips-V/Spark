@@ -1,27 +1,28 @@
 import React from "react";
 import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
-import { FormBtn } from "../InfoBtn";
-import { InfoModal } from "../InfoModal"
+// import Button from '@material-ui/core/Button';
+import SimpleModalWrapped  from "../InfoModal/InfoModal"
 import axios from "axios";
 
  class ListItem extends React.Component {
  state = {
   charities: [],
-  searched: false
-  // show: false
+  searched: false,
+  show: false
 }
  handleFormSubmit = event => {
   event.preventDefault();
-  if (this.FormBtn == true) {
+  console.log("works")
+  if (this.FormBtn === true) {
     axios
     .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
     .then(res => this.setState({charities: res, searched: true}))
     .catch(err => console.log(err));
   }
   this.setState({
-    ...this.state,
-    show: !this.state.show
+    // ...this.state,
+    open: true
   })
   };
 
@@ -48,21 +49,14 @@ render(){
         :
           <h4>{this.props.State}</h4>
         }
-        <FormBtn
-        onClick={this.handleFormSubmit}>
-         Get Charity Details
-        </FormBtn>
-          {/* <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
-            Get Charity Details!
-          </a>  */}
-        <InfoModal charities={this.state.charities} show={this.state.show}></InfoModal>
+        <SimpleModalWrapped charities={this.state.charities} open={this.state.open} Incident={this.props.Incident}></SimpleModalWrapped>
           {/* <p>
-          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button" onClick={this.handleFormSubmit}
-          charities={this.state.charities} show={this.state.show}>
+          <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button" onClick={this.handleFormSubmit}
+          charities={this.state.charities} open="true">
             Get Charity Details!
           </a> 
           </p> */}
-          <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
+          <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
             Donate!
           </a>
           

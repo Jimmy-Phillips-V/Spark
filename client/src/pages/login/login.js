@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import './login.css';
 import firebase from '../../base'
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Local from "../Local";
-import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+// import Local from "../Local";
+// import { Link } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import Jumbotron from "../../components/Jumbotron";
-import {Container, Row, Col} from "../../components/Grid";
+import {Container} /*Row, Col*/ from "../../components/Grid";
 import SigninModal from "../../components/Signin/SigninModal";
 import SignIn from "../../components/Signin/Signin";
 

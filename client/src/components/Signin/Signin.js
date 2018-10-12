@@ -13,7 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Redirect } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 
@@ -87,7 +87,7 @@ function SignIn(props) {
               variant="contained"
               color="primary"
               className={classes.submit}
-             OnClick={<Redirect to="/local"/>}
+              onClick={<Redirect to="/local"/>}
             >
               Sign in
             </Button>

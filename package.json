@@ -30,6 +30,7 @@
     "firebase": "^5.5.3",
     "if-env": "^1.0.4",
     "mysql2": "^1.6.1",
+    "prop-types": "^15.6.2",
     "sequelize": "^4.39.0"
   }
 }

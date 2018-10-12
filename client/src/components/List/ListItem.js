@@ -8,7 +8,7 @@ export const ListItem = props => (
     <Container>
       <Row>
         <Col size="xs-4 sm-2">
-          <Thumbnail src="https://placehold.it/300x300" />
+          <Thumbnail src= {props.image} />
         </Col>
         <Col size="xs-8 sm-9">
         <h3>{props.title}</h3>
@@ -24,17 +24,24 @@ export const ListItem = props => (
         :
           <h4>{props.State}</h4>
         }
-    
-          <p>
-          <a rel="noferrer noopener" target="_blank" href={props.url}>
-          Get Details
-          </a>
-          </p>
-          <p>
-        <a rel="noferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=4617">
+
+          {(props.charityname != undefined) ?
+            <h4>{props.charityname+props.charity}</h4>
+          :
+            <h4>{props.charity}</h4>
+          }
+
+          {/* <p> */}
+          {/* <a rel="noferrer noopener" target="_blank" href={props.url}> */}
+          {/* Get Details */}
+          {/* </a> */}
+          {/* </p> */}
+          {/* <p> */}
+        {/* <a rel="noferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=4617">
           Charity: UNICEF 3 out of 4 stars
-          </a>  
-          </p>
+          </a>   */}
+       
+          {/* </p> */}
           <a class="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button">
             Donate!
           </a>

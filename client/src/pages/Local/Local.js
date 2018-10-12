@@ -6,6 +6,15 @@ import {Container, Row, Col} from "../../components/Grid"
 import { List, ListItem } from "../../components/List";
 import firebase from '../../base'
 
+
+
+
+  const disasterImages = {
+    Fire : {
+      img : "https://s7d2.scene7.com/is/image/TWCNews/0618_fire_genericjpg?wid=767&hei=432&$wide-bg$",
+      charity : "Red Cross"
+  }
+}
 class Local extends Component {
     state = {
       local: [],
@@ -16,15 +25,7 @@ class Local extends Component {
       this.loadLocal();
     }
 
-    // constructor(props) {
-    //   super(props)
-    //   this.signOut = this.signOut.bind(this)
-    // }
-
-    // signOut = () => {
-    //   firebase.auth().signOut()
-    // }
-  
+   
     loadLocal = () => {
       API.getLocal()
         .then(res =>
@@ -44,12 +45,15 @@ class Local extends Component {
             <Row>
               <Col size="md-12">
               <List>
-              {this.state.local.map(item => {
+              {this.state.local.map((item, index ) => {
                  return (
                   <ListItem
+                  key = {index}
+                  image={disasterImages[item.incidentType].img}
+                  charityname={"Charity: "}
+                  charity={disasterImages[item.incidentType].charity}
                   text={"Incident: "}
                   Incident={item.incidentType}
-                  
                   County={item.declaredCountyArea}
                   />  
                  )

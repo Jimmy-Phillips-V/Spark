@@ -5,7 +5,7 @@ import Global from "./pages/Global";
 import National from "./pages/National";
 import Login from "./pages/login";
 // import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 
 
 const App = () => (

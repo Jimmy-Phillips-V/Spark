@@ -59,7 +59,7 @@ class Global extends Component {
                 title={item.fields.name}
                 href={item.href}
                 url={item.fields.url}
-                />   
+                />
                )
             })}
             </List>

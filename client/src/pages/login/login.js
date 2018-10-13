@@ -133,8 +133,8 @@ class login extends Component {
               Signup
             </Button> */}
           
-          <form id="create-user-form" onSubmit={this.createUser}>
-            <h2>Create user</h2>
+          <form onSubmit={this.createUser}>
+            <h2>Sign Up</h2>
             <input 
             value={this.state.value} 
             onChange={this.handleCreateUserEmailChange} 
@@ -158,13 +158,32 @@ class login extends Component {
             open={this.state.open}
             onClose={this.handleClose}
             >
-            
-          <form id="sign-in-form" onSubmit={this.signIn}>
-            <h2>Sign in</h2>
-            <input value={this.state.value} onChange={this.handleLoginEmailChange} type="email" placeholder="Email" required></input>
-            <input value={this.state.value} onChange={this.handleLoginPasswordChange} type="password" placeholder="Password" required></input>
-            <button id="signIn-button" type="submit">Log In</button>
+            <div class="modal-content p-3">
+          <div class="signup-form">
+            <h1>Sign Up</h1>
+          <form onSubmit={this.signIn}>
+          {/* Email */}
+          <div class="form-group">
+            <input value={this.state.value} 
+            onChange={this.handleLoginEmailChange} 
+            type="email" 
+            placeholder="Email" 
+            required>
+            </input>
+            </div>
+            {/* //password */}
+            <div class="form-group">
+            <input value={this.state.value} 
+            onChange={this.handleLoginPasswordChange} 
+            type="password" 
+            placeholder="Password" 
+            required>
+            </input>
+            </div>
+            <Button id="signIn-button" type="submit">Log In</Button>
           </form>
+          </div>
+          </div>
           
           </Modal>
           <p id="errors">{this.state.error}</p>
@@ -177,11 +196,11 @@ class login extends Component {
     </div>
 
      {/* Errors  */}
-     {
+     {/* {
        (this.state.authenticated === false)
        ? <div>status <span className="status-red">not authenticated</span></div>
        : <div>status <span className="status-green">authenticated</span></div>
-     }
+     } */}
 
       {
         this.state.authenticated === true &&

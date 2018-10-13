@@ -114,27 +114,18 @@ class login extends Component {
     return (
       <div className="chicken">
        <Container>
-         <Jumbotron />
+         <div id="title">
+         <h1>Welcome to Spark</h1>
+         </div>
 
      {/* Authentication  */}
-    <div className="dashed-container">
-
-
+    <div id="signup-form">
       {this.state.authenticated === false &&
         <div>
-          {/* <Button
-              type="submit"
-              // fullWidth
-              variant="contained"
-              color="primary"
-              // className={classes.submit}
-              onClick={this.handleOpen}
-            >
-              Signup
-            </Button> */}
-          
           <form onSubmit={this.createUser}>
-            <h2>Sign Up</h2>
+            <h3>Spark a change</h3>
+            <h4>Sign Up</h4>
+            <div class="form-group">
             <input 
             value={this.state.value} 
             onChange={this.handleCreateUserEmailChange} 
@@ -142,6 +133,8 @@ class login extends Component {
             placeholder="Email" 
             required
             />
+            </div>
+            <div class="form-group">
             <input 
             value={this.state.value} 
             onChange={this.handleCreateUserPasswordChange} 
@@ -149,9 +142,13 @@ class login extends Component {
             placeholder="Password" 
             required
             />
-            <button id="sign-up-button" type="submit">Sign Up</button>
-          </form>
+            </div>
+            <Button color="primary" variant="contained">Sign Up</Button>
+          
+          <div class="form-group">
         Already a Member? <Button onClick={this.handleOpen}>Sign In</Button>
+          </div>
+          </form>
             <Modal
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
@@ -159,8 +156,8 @@ class login extends Component {
             onClose={this.handleClose}
             >
             <div class="modal-content p-3">
-          <div class="signup-form">
-            <h1>Sign Up</h1>
+          <div class="signin-form">
+            <h1>Sign In</h1>
           <form onSubmit={this.signIn}>
           {/* Email */}
           <div class="form-group">
@@ -180,7 +177,7 @@ class login extends Component {
             required>
             </input>
             </div>
-            <Button id="signIn-button" type="submit">Log In</Button>
+            <Button id="signIn-button" type="submit">Submit</Button>
           </form>
           </div>
           </div>

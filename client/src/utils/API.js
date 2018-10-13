@@ -10,8 +10,8 @@ export default {
     return axios.get("/api/national/");
   },
   // Gets Local data
-  getLocal: function() {
-    return axios.get("/api/local/");
-  }
-  
+  getLocal: function(lat, lng) {
+    const state = {lat : lat, lng: lng}
+    return axios.post("/api/local/", state);
+  } 
 };

@@ -18,6 +18,7 @@ class login extends Component {
       authenticated: false,
       items: []
     }
+    
   }
 
   handleCreateUserEmailChange = (event) => {
@@ -107,7 +108,7 @@ class login extends Component {
      {/* Authentication  */}
     <div className="dashed-container">
 
-
+      
       {this.state.authenticated === false &&
         <div>
           <form id="create-user-form" onSubmit={this.createUser}>

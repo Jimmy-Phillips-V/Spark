@@ -14,7 +14,6 @@ const disasterImages = {
       donationUrl : "https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=043810161"
   }
 }
-
 class Local extends Component {
     state = {
       local: []
@@ -25,13 +24,17 @@ class Local extends Component {
     }
    
     loadLocal = () => {
-      API.getLocal()
-      .then(res => {
-        this.setState ({ local: res.data.DisasterDeclarationsSummaries })
-        console.log(this.state)
+      const that = this;
+      //get the user's current position
+      navigator.geolocation.getCurrentPosition(function(position){
+        API.getLocal(position.coords.latitude, position.coords.longitude)
+        .then(res => {
+          that.setState ({ local: res.data.DisasterDeclarationsSummaries })
+        })
+        .catch(err => console.log(err))
+         
       })
-      .catch(err => console.log(err));
-        console.log (this.state.local)
+     
     };
     
     render() {

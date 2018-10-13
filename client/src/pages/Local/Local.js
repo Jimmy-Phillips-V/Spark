@@ -51,7 +51,7 @@ class Local extends Component {
                   charityname={"Charity: "}
                   charity={disasterImages[item.incidentType].charity}
                   text={"Incident: "}
-                  Incident={item.incidentType}
+                  incident={item.incidentType}
                   County={item.declaredCountyArea}
                   url={disasterImages[item.incidentType].donationUrl}
                   />  

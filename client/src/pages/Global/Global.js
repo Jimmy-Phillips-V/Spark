@@ -79,6 +79,7 @@ class Global extends Component {
                 charityname={"Charity: "}
                 charity={disasterImages[item.fields.type[0].name].charity}
                 url={disasterImages[item.fields.type[0].name].donationUrl}
+                incident={item.fields.type[0].name}
                 />
                )
             })}

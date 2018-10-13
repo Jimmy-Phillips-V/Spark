@@ -1,5 +1,7 @@
-.form {
-    margin: 20px;
+#sign-in-form {
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8)
+
   }
   
   .form input {

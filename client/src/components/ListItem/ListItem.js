@@ -38,9 +38,9 @@ render(){
         <Col size="xs-8 sm-9">
         <h3>{this.props.title}</h3>
         {(this.props.text !== undefined) ?
-           <h3>{this.props.text+this.props.Incident}</h3>
+           <h3>{this.props.text+this.props.incident}</h3>
         :
-          <h3>{this.props.Incident}</h3>
+          <h3>{this.props.incident}</h3>
         }
         
         <h4>{this.props.County}</h4>
@@ -49,7 +49,7 @@ render(){
         :
           <h4>{this.props.State}</h4>
         }
-        <SimpleModalWrapped charities={this.state.charities} open={this.state.open} Incident={this.props.Incident}></SimpleModalWrapped>
+        <SimpleModalWrapped charities={this.state.charities} open={this.state.open} incident={this.props.incident}></SimpleModalWrapped>
 
           <h4>{this.props.charityname+this.props.charity}</h4>
           {/* <p>

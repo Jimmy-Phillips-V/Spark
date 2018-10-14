@@ -49,8 +49,8 @@ class National extends Component {
         .catch(err => console.log(err));
         // console.log (this.state.national)
     };
-  
-  
+
+    
     render() {
       return (
             <div>

@@ -125,16 +125,16 @@ else if (this.props.incident === "Other") {
         <div style={getModalStyle()} className={classes.paper}>
                    <Typography variant="h6" id="modal-title">
                    {/* {this.props.incident} */}
-                   Charity: {(this.state.info) ? this.state.info.data[0].charityName : "No Matching Charity"}
+                   Charity: {(this.state.info) ? this.state.info.data[0].charityName : "No Info"}
                    </Typography>
                    <Typography>
-                   Motto: {(this.state.info) ? this.state.info.data[0].tagLine : "No Rating Found"}
+                   Motto: {(this.state.info) ? this.state.info.data[0].tagLine : "No Info"}
                    </Typography>
                    <Typography>
-                   Rating: {(this.state.info) ? this.state.info.data[0].currentRating.rating : "No Rating Found"} out of 4 stars.
+                   Rating: {(this.state.info) ? this.state.info.data[0].currentRating.rating : "No Info"} out of 4 stars.
                    </Typography>
                    <Typography>
-                   Website: {(this.state.info) ? this.state.info.data[0].websiteURL : "No Rating Found"}
+                   Website: {(this.state.info) ? this.state.info.data[0].websiteURL : "No Info"}
                    </Typography>
                    <Button
               type="submit"

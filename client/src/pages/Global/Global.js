@@ -8,6 +8,7 @@ import ListItem from "../../components/ListItem";
 // import {Container, Row, Col} from "../../components/Grid"
 // import { List, ListItem } from "../../components/List";
 
+
 const disasterImages = {
   "Tropical Cyclone" :{
    img : "https://s.newsweek.com/sites/www.newsweek.com/files/styles/full/public/2017/10/28/1028floridacyclone.jpg",
@@ -74,7 +75,7 @@ class Global extends Component {
                return (
                 <ListItem
                 key = {index}
-                title={item.fields.country[0].name + ": " }
+                title={item.fields.country[0].name}
                 image={disasterImages[item.fields.type[0].name].img}
                 charityname={"Charity: "}
                 charity={disasterImages[item.fields.type[0].name].charity}

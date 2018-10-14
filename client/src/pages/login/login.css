@@ -1,7 +1,7 @@
 
 body {
   height: 100%;
-  background: url("https://media.npr.org/assets/img/2018/04/04/gettyimages-937327264-0ffed8630d3555e1c7389d3af280fffec4bcf9ef-s800-c85.jpg") no-repeat center center fixed; 
+  background: url("https://media.cuinsight.com/wp-content/uploads/2017/06/bigstock-Teamwork-Couple-Climbing-Helpi-91037114.jpeg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,6 +12,8 @@ body {
   color: white;
   margin-top: 100px;
   margin-bottom: 25px;
+  font-family: 'Lobster', cursive;
+
 }
 #signup-form {
   margin: 0 auto;
@@ -25,14 +27,16 @@ body {
 
 }
 
-.signin-form {
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    text-align: center;
-    padding-top: 100px;
+#signin-form {
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  width: 400px;
+  position: absolute;
+  height: 400px;
+  text-align: center;
+  padding-top: 50px;
+  top: 175px;
+  left: 34.5%;
 
 
   }

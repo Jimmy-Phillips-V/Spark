@@ -31,6 +31,9 @@
     "if-env": "^1.0.4",
     "mysql2": "^1.6.1",
     "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
     "reverse-geocoding-google": "^1.1.0",
     "sequelize": "^4.39.0"
   }

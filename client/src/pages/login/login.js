@@ -118,8 +118,9 @@ class login extends Component {
          <div id="title">
          <h1>Welcome to Spark</h1>
          </div>
-
+         {/* <Button color="primary" variant="contained">Sign Up</Button> */}
      {/* Authentication  */}
+     
     <div id="signup-form">
       {this.state.authenticated === false &&
         <div>
@@ -150,15 +151,19 @@ class login extends Component {
         Already a Member? <Button onClick={this.handleOpen}>Sign In</Button>
           </div>
           </form>
+          
+          
+
             <Modal
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
             open={this.state.open}
             onClose={this.handleClose}
             >
-            <div class="modal-content p-3">
-          <div class="signin-form">
-            <h1>Sign In</h1>
+            
+          <div id="signin-form">
+          <h3>Spark a change</h3>
+            <h4>Sign In</h4>
           <form onSubmit={this.signIn}>
           {/* Email */}
           <div class="form-group">
@@ -181,7 +186,7 @@ class login extends Component {
             <Button id="signIn-button" type="submit">Submit</Button>
           </form>
           </div>
-          </div>
+        
           
           </Modal>
           <p id="errors">{this.state.error}</p>

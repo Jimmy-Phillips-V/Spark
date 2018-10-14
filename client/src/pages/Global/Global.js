@@ -74,11 +74,12 @@ class Global extends Component {
                return (
                 <ListItem
                 key = {index}
-                title={item.fields.country[0].name + ": " + item.fields.type[0].name}
+                title={item.fields.country[0].name + ": " }
                 image={disasterImages[item.fields.type[0].name].img}
                 charityname={"Charity: "}
                 charity={disasterImages[item.fields.type[0].name].charity}
                 url={disasterImages[item.fields.type[0].name].donationUrl}
+                incident={item.fields.type[0].name}
                 />
                )
             })}

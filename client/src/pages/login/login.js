@@ -8,6 +8,11 @@ import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import Jumbotron from "../../components/Jumbotron";
 import {Container, Row, Col} from "../../components/Grid"
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Modal from '@material-ui/core/Modal';
+import Button from '@material-ui/core/Button';
 
 
 //Jimmy's Code
@@ -16,11 +21,18 @@ class login extends Component {
     super()
     this.state = {
       authenticated: false,
-      items: []
+      items: [],
+      open:false
     }
     
   }
-
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+  
   handleCreateUserEmailChange = (event) => {
     this.setState({createUserEmail: event.target.value});
   }
@@ -103,16 +115,18 @@ class login extends Component {
     return (
       <div className="chicken">
        <Container>
-         <Jumbotron />
+         <div id="title">
+         <h1>Welcome to Spark</h1>
+         </div>
 
      {/* Authentication  */}
-    <div className="dashed-container">
-
-      
+    <div id="signup-form">
       {this.state.authenticated === false &&
         <div>
-          <form id="create-user-form" onSubmit={this.createUser}>
-            <h2>Create user</h2>
+          <form onSubmit={this.createUser}>
+            <h3>Spark a change</h3>
+            <h4>Sign Up</h4>
+            <div class="form-group">
             <input 
             value={this.state.value} 
             onChange={this.handleCreateUserEmailChange} 
@@ -120,6 +134,8 @@ class login extends Component {
             placeholder="Email" 
             required
             />
+            </div>
+            <div class="form-group">
             <input 
             value={this.state.value} 
             onChange={this.handleCreateUserPasswordChange} 
@@ -127,16 +143,47 @@ class login extends Component {
             placeholder="Password" 
             required
             />
-            <button id="sign-up-button" type="submit">Sign Up</button>
+            </div>
+            <Button color="primary" variant="contained">Sign Up</Button>
+          
+          <div class="form-group">
+        Already a Member? <Button onClick={this.handleOpen}>Sign In</Button>
+          </div>
           </form>
-
-          <form id="sign-in-form" onSubmit={this.signIn}>
-            <h2>Sign in</h2>
-            <input value={this.state.value} onChange={this.handleLoginEmailChange} type="email" placeholder="Email" required></input>
-            <input value={this.state.value} onChange={this.handleLoginPasswordChange} type="password" placeholder="Password" required></input>
-            <button id="signIn-button" type="submit">Log In</button>
+            <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={this.state.open}
+            onClose={this.handleClose}
+            >
+            <div class="modal-content p-3">
+          <div class="signin-form">
+            <h1>Sign In</h1>
+          <form onSubmit={this.signIn}>
+          {/* Email */}
+          <div class="form-group">
+            <input value={this.state.value} 
+            onChange={this.handleLoginEmailChange} 
+            type="email" 
+            placeholder="Email" 
+            required>
+            </input>
+            </div>
+            {/* //password */}
+            <div class="form-group">
+            <input value={this.state.value} 
+            onChange={this.handleLoginPasswordChange} 
+            type="password" 
+            placeholder="Password" 
+            required>
+            </input>
+            </div>
+            <Button id="signIn-button" type="submit">Submit</Button>
           </form>
-
+          </div>
+          </div>
+          
+          </Modal>
           <p id="errors">{this.state.error}</p>
         
         </div>
@@ -147,11 +194,11 @@ class login extends Component {
     </div>
 
      {/* Errors  */}
-     {
+     {/* {
        (this.state.authenticated === false)
        ? <div>status <span className="status-red">not authenticated</span></div>
        : <div>status <span className="status-green">authenticated</span></div>
-     }
+     } */}
 
       {
         this.state.authenticated === true &&

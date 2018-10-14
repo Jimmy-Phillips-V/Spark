@@ -68,7 +68,7 @@ class National extends Component {
                 charityname={"Charity: "}
                 charity={disasterImages[item.incidentType].charity}
                 text={"Incident: "}
-                Incident={item.incidentType}
+                incident={item.incidentType}
                 statename={"State: "}
                 State={item.state}
                 County={item.declaredCountyArea}

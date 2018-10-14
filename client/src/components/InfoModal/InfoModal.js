@@ -47,36 +47,57 @@ class SimpleModal extends React.Component {
 
   componentDidMount() {
       console.log("works")
-    if (this.props.incident === "Tornado") {
+      console.log(this.props)
+    if (this.props.incident === "Tropical Cyclone") {
         axios
         .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
         .then(res => this.setState({info: res}))
     }
     else if (this.props.incident === "Fire") {
         axios
-        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=ICNA%20relief&searchType=NAME_ONLY&rated=true&minRating=3")
         .then(res => this.setState({info: res}))    
     }
     else if (this.props.incident === "Flood") {
         axios
-        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=direct%20relief&searchType=NAME_ONLY&rated=true&minRating=3")
         .then(res => this.setState({info: res}))    
     }
     else if (this.props.incident === "Hurricane") {
         axios
-        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=all%20hands%20and%20hearts%20smart%20response&searchType=NAME_ONLY&rated=true&minRating=3")
         .then(res => this.setState({info: res}))    
     }
     else if (this.props.incident === "Earthquake") {
         axios
-        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=World%20Relief&searchType=NAME_ONLY&rated=true&minRating=3")
         .then(res => this.setState({info: res}))    
     }
     else if (this.props.incident === "Drought") {
         axios
-        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+        .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=World%20Relief&searchType=NAME_ONLY&rated=true&minRating=3")
         .then(res => this.setState({info: res}))    
     }
+    else if (this.props.incident === "Epidemic") {
+      axios
+      .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=doctors%20without%20borders&searchType=NAME_ONLY&rated=true&minRating=3")
+      .then(res => this.setState({info: res}))    
+  }
+  else if (this.props.incident === "Tornado") {
+    axios
+    .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+    .then(res => this.setState({info: res}))    
+}
+else if (this.props.incident === "Other") {
+  axios
+  .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+  .then(res => this.setState({info: res}))    
+}
+  //   else {
+  //     axios
+  //     .get("https://api.data.charitynavigator.org/v2/Organizations?app_id=6b3b6e94&app_key=9d523e68a9f651834c7e025333070333&search=Red%20Cross&searchType=NAME_ONLY&rated=true&minRating=3")
+  //     .then(res => this.setState({info: res}))    
+  // }
   }
 
   render() {
@@ -99,12 +120,32 @@ class SimpleModal extends React.Component {
           aria-describedby="simple-modal-description"
           open={this.state.open}
           onClose={this.handleClose}
-          Incident={this.props.Incident}
+          incident={this.props.incident}
         >
         <div style={getModalStyle()} className={classes.paper}>
                    <Typography variant="h6" id="modal-title">
-                   {this.props.Incident}
+                   {/* {this.props.incident} */}
+                   Charity: {(this.state.info) ? this.state.info.data[0].charityName : "No Info"}
                    </Typography>
+                   <Typography>
+                   Motto: {(this.state.info) ? this.state.info.data[0].tagLine : "No Info"}
+                   </Typography>
+                   <Typography>
+                   Rating: {(this.state.info) ? this.state.info.data[0].currentRating.rating : "No Info"} out of 4 stars.
+                   </Typography>
+                   <Typography>
+                   Website: {(this.state.info) ? this.state.info.data[0].websiteURL : "No Info"}
+                   </Typography>
+                   <Button
+              type="submit"
+              // fullWidth
+              variant="contained"
+              color="primary"
+              // className={classes.submit}
+              onClick={this.handleOpen}
+            >
+              Save
+            </Button>
                  </div>
                </Modal>
              </div>

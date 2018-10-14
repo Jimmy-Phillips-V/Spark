@@ -61,6 +61,7 @@ class Local extends Component {
                  )
               })}
               </List>
+              
               </Col>
               </Row>
               </Container>

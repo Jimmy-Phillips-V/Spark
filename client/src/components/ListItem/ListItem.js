@@ -4,6 +4,7 @@ import { Container, Row, Col } from "../Grid";
 // import Button from '@material-ui/core/Button';
 import SimpleModalWrapped  from "../InfoModal/InfoModal"
 import axios from "axios";
+import "./ListItem.css"
 
  class ListItem extends React.Component {
  state = {
@@ -29,10 +30,11 @@ import axios from "axios";
  // RecipeListItem renders a bootstrap list item containing data from the recipe api call
 render(){
    return(
-  <li className="list-group-item">
+     <div>
+  <li className="list-group-item rounded-bottom">
     <Container>
       <Row>
-        <Col size="xs-4 sm-2">
+        <Col className="mt-5" size="xs-4 sm-2">
           <Thumbnail src={this.props.image} />
         </Col>
         <Col size="xs-8 sm-9">
@@ -49,16 +51,11 @@ render(){
         :
           <h4>{this.props.State}</h4>
         }
-        <SimpleModalWrapped charities={this.state.charities} open={this.state.open} incident={this.props.incident}></SimpleModalWrapped>
+        <h4>{this.props.charityname+this.props.charity}</h4>
 
-          <h4>{this.props.charityname+this.props.charity}</h4>
-          {/* <p>
-          <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href="https://www.charitynavigator.org/index.cfm?bay=my.donations.makedonation&ein=131760110" role="button" onClick={this.handleFormSubmit}
-          charities={this.state.charities} open="true">
-            Get Charity Details!
-          </a> 
-          </p> */}
-          <a className="btn btn-primary" rel="noreferrer noopener" target="_blank" href={this.props.url} role="button">
+        <SimpleModalWrapped charities={this.state.charities} open={this.state.open} incident={this.props.incident}></SimpleModalWrapped>
+  
+          <a id="donate" className="btn btn-primary" rel="noreferrer noopener" target="_blank" href={this.props.url} role="button">
             Donate!
           </a>
           
@@ -66,7 +63,11 @@ render(){
       </Row>
     </Container>
   </li>
+  <br />
+  </div>
+
  
   )};
 }
+
  export default ListItem; 

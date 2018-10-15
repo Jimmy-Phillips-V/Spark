@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Nav from "../../components/Nav";
-import Jumbotron from "../../components/Jumbotron";
+import { JumbotronNational } from "../../components/JumbotronNational";
 import {Container, Row, Col} from "../../components/Grid"
 import { List } from "../../components/List";
 import ListItem from "../../components/ListItem";
@@ -55,7 +55,7 @@ class National extends Component {
       return (
             <div>
          <Nav />
-         <Jumbotron />
+         <JumbotronNational />
         <Container>
           <Row>
             <Col size="md-12">

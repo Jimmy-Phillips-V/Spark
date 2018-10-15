@@ -12,6 +12,12 @@
     
 }
 .span{
-    text-align: right;
+    /* text-align: right; */
     display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px white;}
+#local-title{
+    font-family: Lobster;
+    /* text-decoration: underline; */
+    text-shadow: 2px 2px white;
 }

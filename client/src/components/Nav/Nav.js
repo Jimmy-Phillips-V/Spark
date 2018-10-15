@@ -29,22 +29,19 @@ function Nav(props) {
   const { classes } = props;
   return (
     <div>
-      <nav id="spark-nav" className="navbar navbar-dark bg-dark">
+      <nav id="spark-nav" className="navbar navbar-dark bg-darker">
       <a id="brand"className="navbar-brand" href="/">
       <h3>Spark</h3></a>
 
 
       <ul id="buttons">
-      <Button component={Link} to="/" variant="contained" color="default" className={classes.button}>
-       Saved
-      </Button>
-      <Button component={Link} to="/local" variant="contained" color="secondary" className={classes.button}>
+      <Button component={Link} to="/local" color="primary" className={classes.button}>
        Local
       </Button>
-      <Button component={Link} to="/national" variant="contained" color="primary" className={classes.button}>
+      <Button component={Link} to="/national" color="primary" className={classes.button}>
      National
       </Button>
-     <Button component={Link} to="/global" variant="contained" color="secondary" className={classes.button}>
+     <Button component={Link} to="/global" color="primary" className={classes.button}>
        Global
       </Button>
       </ul>

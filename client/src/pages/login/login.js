@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Local from "../Local";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import Jumbotron from "../../components/Jumbotron";
+import Jumbotron from "../../components/JumbotronNational";
 import {Container, Row, Col} from "../../components/Grid"
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -167,6 +167,7 @@ class login extends Component {
        <Container>
          <div id="title">
          <h1>Welcome to Spark</h1>
+         <h4>An application for change</h4>
          </div>
          {/* <Button color="primary" variant="contained">Sign Up</Button> */}
      {/* Authentication  */}
@@ -175,8 +176,8 @@ class login extends Component {
       {this.state.authenticated === false &&
         <div>
           <form onSubmit={this.createUser}>
-            <h3>Spark a change</h3>
-            <h4>Sign Up</h4>
+            
+            <h4>Spark Up</h4>
             <div class="form-group">
             <input 
             value={this.state.value} 

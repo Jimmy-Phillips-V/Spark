@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Nav from "../../components/Nav";
-import Jumbotron from "../../components/Jumbotron";
+import { JumbotronLocal }from "../../components/JumbotronLocal";
 import {Container, Row, Col} from "../../components/Grid"
 import { List } from "../../components/List";
 import ListItem from "../../components/ListItem";
@@ -41,7 +41,7 @@ class Local extends Component {
         return (
               <div>
            <Nav />
-           <Jumbotron />
+           <JumbotronLocal />
           <Container>
             <Row>
               <Col size="md-12">

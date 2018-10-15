@@ -1,0 +1,17 @@
+#local {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 92%;
+    /* margin-bottom: 10px; */
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    text-shadow: 2px 2px white;
+    padding: 20px;
+
+
+    
+}
+.span{
+    text-align: right;
+    display: inline-block;
+}

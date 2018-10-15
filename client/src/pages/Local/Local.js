@@ -51,7 +51,7 @@ class Local extends Component {
                   <ListItem
                   key = {index}
                   image={disasterImages[item.incidentType].img}
-                  charityname={"Charity: "}
+                  charityName={"Charity: "}
                   charity={disasterImages[item.incidentType].charity}
                   text={"Incident: "}
                   incident={item.incidentType}

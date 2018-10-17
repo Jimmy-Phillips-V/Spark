@@ -51,7 +51,7 @@ render(){
         :
           <h4>{this.props.State}</h4>
         }
-        <h4>{this.props.charityname+this.props.charity}</h4>
+        <h4>{this.props.charityName+this.props.charity}</h4>
 
         <SimpleModalWrapped charities={this.state.charities} open={this.state.open} incident={this.props.incident}></SimpleModalWrapped>
   

@@ -2,3 +2,4 @@ node_modules
 ./client/src/yarn.lock
 yarn.lock
 package-lock.json
+./client/node_modules

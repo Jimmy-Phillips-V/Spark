@@ -2,15 +2,8 @@
 import React, { Component } from 'react';
 import './login.css';
 import firebase from '../../base'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Local from "../Local";
-import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import Jumbotron from "../../components/JumbotronNational";
-import {Container, Row, Col} from "../../components/Grid"
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import { Container } from "../../components/Grid"
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 

@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import firebase from '../../base';
-// import { Button } from 'react-bootstrap';
-// import { Navbar } from 'react-bootstrap'
-
-
-
 
 const styles = theme => ({
   button: {
@@ -19,11 +14,6 @@ const styles = theme => ({
     display: 'none',
   },
 });
-
-// function handleClick() {
-// firebase.auth().signOut()
-//  }
-
 
 function Nav(props) {
   const { classes } = props;
@@ -59,7 +49,3 @@ Nav.propTypes = {
 };
 
 export default withStyles(styles)(Nav);
-
-
-
-

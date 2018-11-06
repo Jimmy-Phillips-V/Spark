@@ -47,7 +47,6 @@ class National extends Component {
           this.setState({ national: res.data.DisasterDeclarationsSummaries })
         )
         .catch(err => console.log(err));
-        // console.log (this.state.national)
     };
 
     

@@ -1,7 +1,6 @@
 import React from "react";
 import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
-// import Button from '@material-ui/core/Button';
 import SimpleModalWrapped  from "../InfoModal/InfoModal"
 import axios from "axios";
 import "./ListItem.css"
@@ -22,7 +21,6 @@ import "./ListItem.css"
     .catch(err => console.log(err));
   }
   this.setState({
-    // ...this.state,
     open: true
   })
   };

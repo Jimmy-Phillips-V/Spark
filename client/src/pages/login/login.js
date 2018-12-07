@@ -2,15 +2,8 @@
 import React, { Component } from 'react';
 import './login.css';
 import firebase from '../../base'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Local from "../Local";
-import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import Jumbotron from "../../components/JumbotronNational";
-import {Container, Row, Col} from "../../components/Grid"
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import { Container } from "../../components/Grid"
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 
@@ -36,12 +29,12 @@ class login extends Component {
             open={this.state.open}
             onClose={this.handleClose}
             >
-            <div class="modal-content p-3">
-          <div class="signin-form">
+            <div className="modal-content p-3">
+          <div className="signin-form">
             <h1>Sign In</h1>
           <form onSubmit={this.signIn}>
           {/* Email */}
-          <div class="form-group">
+          <div className="form-group">
             <input value={this.state.value} 
             onChange={this.handleLoginEmailChange} 
             type="email" 
@@ -50,7 +43,7 @@ class login extends Component {
             </input>
             </div>
             {/* //password */}
-            <div class="form-group">
+            <div className="form-group">
             <input value={this.state.value} 
             onChange={this.handleLoginPasswordChange} 
             type="password" 
@@ -179,7 +172,7 @@ class login extends Component {
           <form onSubmit={this.createUser}>
             
             <h4>Spark Up</h4>
-            <div class="form-group">
+            <div className="form-group">
             <input 
             value={this.state.value} 
             onChange={this.handleCreateUserEmailChange} 
@@ -188,7 +181,7 @@ class login extends Component {
             required
             />
             </div>
-            <div class="form-group">
+            <div className="form-group">
             <input 
             value={this.state.value} 
             onChange={this.handleCreateUserPasswordChange} 
@@ -197,9 +190,13 @@ class login extends Component {
             required
             />
             </div>
+<<<<<<< HEAD
             <Button color="primary" variant="contained" type="submit">Sign Up</Button>
+=======
+            <Button color="primary" variant="contained"type="submit">Sign Up</Button>
+>>>>>>> cd48342b6a6e8a8de1c416b97668e4401baca24f
           
-          <div class="form-group">
+          <div className="form-group">
           Already a Member? <Button onClick={this.hideModal}>Sign In</Button>
           </div>
           </form>
@@ -216,7 +213,7 @@ class login extends Component {
             <h4>Sign In</h4>
           <form onSubmit={this.signIn}>
           {/* Email */}
-          <div class="form-group">
+          <div className="form-group">
             <input value={this.state.value} 
             onChange={this.handleLoginEmailChange} 
             type="email" 
@@ -225,7 +222,7 @@ class login extends Component {
             </input>
             </div>
             {/* //password */}
-            <div class="form-group">
+            <div className="form-group">
             <input value={this.state.value} 
             onChange={this.handleLoginPasswordChange} 
             type="password" 

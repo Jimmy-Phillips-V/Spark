@@ -21,7 +21,6 @@ import "./ListItem.css"
     .catch(err => console.log(err));
   }
   this.setState({
-    // ...this.state,
     open: true
   })
   };

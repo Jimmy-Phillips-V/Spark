@@ -16,7 +16,7 @@ exports.testData = functions.database.ref('/data/{pushId}').onWrite(event =>
 // const sequelize = require("sequelize");
 const routes = require("./routes");
 
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
 
 var db = require("./models")
 
@@ -38,11 +38,7 @@ db.sequelize.sync().then(function(){
   })
 })
 
-
-// Start the API server
-// app.listen(PORT, () =>
-//   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
-// );
-
-
-
+var server = app.listen(process.env.PORT || 3001, function () {
+  var port = server.address().port;
+  console.log("Express is working on port " + port);
+});

@@ -1,7 +1,6 @@
 import React from "react";
 import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
-// import Button from '@material-ui/core/Button';
 import SimpleModalWrapped  from "../InfoModal/InfoModal"
 import axios from "axios";
 import "./ListItem.css"
@@ -51,7 +50,7 @@ render(){
         :
           <h4>{this.props.State}</h4>
         }
-        <h4>{this.props.charityname+this.props.charity}</h4>
+        <h4>{this.props.charityName+this.props.charity}</h4>
 
         <SimpleModalWrapped charities={this.state.charities} open={this.state.open} incident={this.props.incident}></SimpleModalWrapped>
   

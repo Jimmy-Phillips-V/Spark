@@ -76,6 +76,7 @@ class login extends Component {
   handleOpen = () => {
     this.setState({ open: true });
   };
+  
   handleClose = () => {
     this.setState({ open: false });
   };
@@ -196,7 +197,7 @@ class login extends Component {
             required
             />
             </div>
-            <Button color="primary" variant="contained">Sign Up</Button>
+            <Button color="primary" variant="contained" type="submit">Sign Up</Button>
           
           <div class="form-group">
           Already a Member? <Button onClick={this.hideModal}>Sign In</Button>

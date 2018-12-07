@@ -77,7 +77,7 @@ class Global extends Component {
                 key = {index}
                 title={item.fields.country[0].name}
                 image={disasterImages[item.fields.type[0].name].img}
-                charityname={"Charity: "}
+                charityName={"Charity: "}
                 charity={disasterImages[item.fields.type[0].name].charity}
                 url={disasterImages[item.fields.type[0].name].donationUrl}
                 incident={item.fields.type[0].name}
